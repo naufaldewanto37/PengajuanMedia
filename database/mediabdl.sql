@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2023 at 09:35 AM
+-- Generation Time: Jul 12, 2023 at 09:47 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,6 +37,13 @@ CREATE TABLE `member` (
   `company_name` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`nik`, `full_name`, `phone`, `email`, `self_address`, `company_address`, `company_name`) VALUES
+(123, 'naufaldewanto', 123, 'adwa@gmail.com', NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -47,15 +54,17 @@ CREATE TABLE `user` (
   `nik` int(100) NOT NULL,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL
+  `email` varchar(100) DEFAULT NULL,
+  `level` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`nik`, `username`, `password`, `email`) VALUES
-(2141412, 'awdwadaw', 'awdawdaga', 'dadaw@gmail.com');
+INSERT INTO `user` (`nik`, `username`, `password`, `email`, `level`) VALUES
+(123, 'a', 'b', 'adwa@gmail.com', NULL),
+(2141412, 'admin', 'admin123', 'dadaw@gmail.com', 'admin');
 
 --
 -- Indexes for dumped tables
