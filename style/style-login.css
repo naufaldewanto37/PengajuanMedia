@@ -1,0 +1,238 @@
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #BD630F 57.19%, rgba(202, 27, 27, 0.85) 65.10%);
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        min-height: 120vh;
+    }
+
+    form {
+        display: block;
+        margin: 0.938rem;
+        width: 18.75rem;
+    }
+
+    label {
+        display: block;
+        margin-top: 0.625rem;
+    }
+
+    #judul {
+        display: flex;
+        width: 61.25rem;
+        height: 9.25rem;
+        flex-shrink: 0;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Outfit';
+        font-size: 3.75rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 4.125rem;
+    }
+
+    .rectangle {
+        background-color: white;
+        height: 26.875rem;
+        width: 50rem;
+        margin: 1.25rem auto;
+        border-radius: 0.938rem;
+    }
+
+    #text-login {
+        color: #000;
+        font-family: Roboto;
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.719rem;
+        text-transform: uppercase;
+    }
+
+    .label-user {
+        color: #000;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.719rem;
+    }
+
+    .login-box {
+        width: 46.875rem;
+        height: 3.75rem;
+        flex-shrink: 0;
+        border-radius: 1.25rem;
+        border: 0.063rem solid rgba(0, 0, 0, 0.50);
+        background: #FFF;
+    }
+
+    #btn-login {
+        margin-top: 0.625rem;
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 1.625rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.719rem;
+        width: 14.375rem;
+        height: 4.063rem;
+        flex-shrink: 0;
+        border-radius: 1.875rem;
+        background: #CB4032;
+    }
+
+    #text-daftar {
+        color: #000;
+        font-family: Roboto;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {        
+        #judul {
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 61.25rem;
+            height: 9.25rem;
+            flex-shrink: 0;
+            color: #FFF;
+            text-align: center;
+            font-family: 'Outfit';
+            font-style: normal;
+            font-weight: 700;
+            line-height: 4.125rem;
+        }
+
+        .rectangle {
+            background-color: white;
+            height: 12rem;
+            width: 20rem;
+            margin: 1.25rem auto;
+            border-radius: 0.938rem;
+        }
+
+        #text-login {
+            color: #000;
+            font-family: Roboto;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .label-user {
+            color: #000;
+            font-family: Roboto;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0.9rem;
+        }
+
+        .login-box {
+            width: 15.875rem;
+            height: 1.75rem;
+            flex-shrink: 0;
+            border-radius: 1.25rem;
+            border: 0.063rem solid rgba(0, 0, 0, 0.50);
+            background: #FFF;
+        }
+
+        #btn-login {
+            margin-top: 0.625rem;
+            color: #FFF;
+            font-family: Roboto;
+            font-size: 0.825rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0.9rem;
+            width: 6.375rem;
+            height: 2.063rem;
+            flex-shrink: 0;
+            border-radius: 1.875rem;
+            background: #CB4032;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        #judul {
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 61.25rem;
+            height: 9.25rem;
+            flex-shrink: 0;
+            color: #FFF;
+            text-align: center;
+            font-family: 'Outfit';
+            font-style: normal;
+            font-weight: 700;
+            line-height: 4.125rem;
+        }
+
+        .rectangle {
+            background-color: white;
+            height: 12rem;
+            width: 20rem;
+            margin: 1.25rem auto;
+            border-radius: 0.938rem;
+        }
+
+        #text-login {
+            color: #000;
+            font-family: Roboto;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .label-user {
+            color: #000;
+            font-family: Roboto;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0.9rem;
+        }
+
+        .login-box {
+            width: 15.875rem;
+            height: 1.75rem;
+            flex-shrink: 0;
+            border-radius: 1.25rem;
+            border: 0.063rem solid rgba(0, 0, 0, 0.50);
+            background: #FFF;
+        }
+
+        #btn-login {
+            margin-top: 0.625rem;
+            color: #FFF;
+            font-family: Roboto;
+            font-size: 0.825rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0.9rem;
+            width: 6.375rem;
+            height: 2.063rem;
+            flex-shrink: 0;
+            border-radius: 1.875rem;
+            background: #CB4032;
+        }
+    }
