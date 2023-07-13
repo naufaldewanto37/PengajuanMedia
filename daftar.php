@@ -8,6 +8,7 @@ $captchaResult = $num1 + $num2;
 $_SESSION['captcha'] = $captchaResult;
 
 $error_message = '';
+$succsess_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['nik']) && isset($_POST['full_name']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['phone']) && isset($_POST['email'])) {
         $nik = $_POST['nik'];
@@ -49,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // If both inserts were successful, commit the transaction
                 $conn->commit();
-                $error_message = 'User has been created successfully.';
+                $succsess_message = 'User has been created successfully.';
             } catch (\Exception $e) {
                 // If any errors occurred, rollback the transaction
                 $conn->rollback();
@@ -120,6 +121,8 @@ $conn->close();
                         <?php
                         if ($error_message != '') {
                             echo '<p style="color:red;">' . $error_message . '</p>';
+                        }elseif($succsess_message != ''){
+                            echo '<p style="color:green;">' . $succsess_message . '</p>';
                         }
                         ?>
                     </form>

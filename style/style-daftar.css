@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(180deg, #BD630F 57.19%, rgba(202, 27, 27, 0.85) 65.10%);
+    background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
@@ -98,6 +98,8 @@ label {
     line-height: 1.71875rem;
     text-align: center;
 }
+
+/* Responsive */
 
 @media screen and (max-width: 768px) {        
     #judul {

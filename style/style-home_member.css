@@ -1,0 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 120vh;
+}
+
+#navbar-content {
+    margin: 2.25rem 1rem 1rem 1rem;
+}
+
+#logo-nama {
+    margin-left: 8.12rem;
+    float: left;
+}
+
+#nama-app {
+    float: right;
+}
+
+#navbar-content a {
+    margin-left: 3.5rem;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+#navbar-content a:focus,
+#navbar-content a:hover,
+#navbar-content a:active {
+    color: yellow;
+    text-decoration: underline;
+}
+
+#kominfo-img {
+    width: 5rem;
+    height: 5rem;
+}
+
+#profile {
+    margin-right: 5rem;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+
+#content {
+    margin: 3.56rem auto;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 60rem;
+    height: 30rem;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 3.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+#btn-pengajuan {
+    margin-top: 3.38rem;
+    margin-bottom: 2.44rem;
+    width: 50.75rem;
+    height: 4.6875rem;
+    flex-shrink: 0;
+    border-radius: 0.9375rem;
+    background: #BD630F;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    text-transform: capitalize;
+}
+
+#btn-riwayat {
+    width: 50.75rem;
+    height: 4.6875rem;
+    flex-shrink: 0;
+    border-radius: 0.9375rem;
+    background: #BD630F;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    text-transform: capitalize;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+        background-repeat: no-repeat;
+        height: 80%;
+        width: 100%;
+        min-height: 120vh;
+    }
+
+    #kominfo-img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    #profile {
+        margin-right: 5rem;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    #navbar-content {
+        margin: 1.25rem auto;
+    }
+
+    #logo-nama {
+        margin-left: 1.12rem;
+        float: left;
+    }
+
+    #nama-app {
+        float: right;
+    }
+
+    #navbar-content a {
+        font-size: 0.6rem;
+        margin-left: 0.1rem;
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 4px 6px;
+        text-decoration: none;
+    }
+
+    #navbar-content a:focus,
+    #navbar-content a:hover,
+    #navbar-content a:active {
+        color: yellow;
+        text-decoration: underline;
+    }
+
+    #content {
+        margin: 2.56rem 10vh auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    .mySlides img {
+        width: 20rem;
+        height: 10rem;
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    #btn-pengajuan {
+        margin-top: 1.38rem;
+        margin-bottom: 2.44rem;
+        width: 19.75rem;
+        height: 2.6875rem;
+        flex-shrink: 0;
+        border-radius: 0.9375rem;
+        background: #BD630F;
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+        text-transform: capitalize;
+    }
+
+    #btn-riwayat {
+        width: 19.75rem;
+        height: 2.6875rem;
+        flex-shrink: 0;
+        border-radius: 0.9375rem;
+        background: #BD630F;
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+        text-transform: capitalize;
+    }
+}
