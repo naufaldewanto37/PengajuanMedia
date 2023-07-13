@@ -1,8 +1,4 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -22,6 +18,18 @@ form {
 label {
     display: block;
     margin-top: 0.625rem;
+}
+
+.navbar {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+#bodypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #judul {
@@ -101,7 +109,7 @@ label {
 
 /* Responsive */
 
-@media screen and (max-width: 768px) {        
+@media screen and (max-width: 768px) {
     #judul {
         font-size: 0.9rem;
         display: flex;
@@ -120,7 +128,7 @@ label {
 
     .rectangle-daftar {
         background-color: white;
-        height: 40.875rem;
+        height: 30.875rem;
         width: 20rem;
         margin: 1.25rem auto;
         border-radius: 0.938rem;

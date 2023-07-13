@@ -19,17 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($user['password'] == $password) {
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['level'] = $user['level'];
+                $_SESSION['id_user'] = $user['id_user'];
                 header('Location: index.php');
             } else {
-                $error_message = 'Invalid password. Please try again.';
+                $error_message = 'Password Salah, Silahkan Ulangi.';
             }
         } else {
-            $error_message = 'Invalid username. Please try again.';
+            $error_message = 'Username Salah, Silahkan Ulangi.';
         }
 
         $stmt->close();
     } else {
-        $error_message = 'Please enter your login credentials.';
+        $error_message = 'Tolong Masukan Akun.';
     }
 }
 
@@ -62,7 +63,6 @@ $conn->close();
         <h1 id="judul">Layanan pengajuan Media Online
             Kota Bandar Lampung </h1>
         <div id="form">
-            <!-- Persegi Panjang di bawah form login -->
             <div class="rectangle">
                 <!-- Form login -->
                 <div>
@@ -73,14 +73,6 @@ $conn->close();
                         <label for="password" class="label-user">Password:</label>
                         <input type="password" placeholder="Password" class="login-box" name="password"><br>
                         <input type="submit" value="Masuk" id="btn-login">
-                        <p id="text-daftar">Belum Memiliki Akun? <a style="
-                        color: #3F6CDF;
-                        font-family: Roboto;
-                        font-size: 1rem;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1.71875rem;
-                        text-decoration: none;" href="daftar.php">Daftar Sekarang</a>.</p>
                     </form>
                     <?php
                     if ($error_message != '') {

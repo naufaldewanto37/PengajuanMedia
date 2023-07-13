@@ -1,3 +1,18 @@
+<?php
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
+if (!isset($_SESSION['id_user'])) {
+    header('Location: login.php');
+    exit();
+} else if ($_SESSION['level'] === 'admin') {
+    header('Location: index.php');
+    exit();
+}
+
+$id_user = $_SESSION['id_user'];
+$profileImageUrl = "profile_member/" . $id_user . ".png";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +38,7 @@
             <a href="bantuan.php">Bantuan</a>
         </div>
         <div class="dropdown">
-            <img src="profile/profile_pic.png" alt="Profile" data-bs-toggle="dropdown" id="profile" aria-expanded="false">
+            <img src="<?php echo $profileImageUrl; ?>" alt="Profile" data-bs-toggle="dropdown" id="profile" aria-expanded="false">
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="profile.php">Ganti Profile</a></li>
                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
@@ -57,9 +72,9 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
-        
-        <button id="btn-pengajuan">Pengajuan Media</button>
-        <button id="btn-riwayat">Riwayat Pengajuan</button>
+
+        <a href="" id="btn-pengajuan">List Pengajuan</a>
+        <a href="" id="btn-riwayat">Riwayat Pengajuan</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
@@ -103,7 +118,7 @@
                 slideIndex = 1
             }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlidesAuto, 4000); // Change image every 2 seconds
+            setTimeout(showSlidesAuto, 4000);
         }
     </script>
 

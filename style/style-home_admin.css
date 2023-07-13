@@ -124,7 +124,7 @@ body {
     height: 4.6875rem;
     flex-shrink: 0;
     border-radius: 0.9375rem;
-    background: #85460b;
+    background: #BD630F;
     color: #FFF;
     font-family: Roboto;
     font-size: 3rem;
@@ -133,14 +133,14 @@ body {
     text-transform: capitalize;
 }
 
-#btn-riwayat {
+#btn-tambah {
     text-align: center;
     text-decoration: none;
     width: 50.75rem;
     height: 4.6875rem;
     flex-shrink: 0;
     border-radius: 0.9375rem;
-    background: #85460b;
+    background: #BD630F;
     color: #FFF;
     font-family: Roboto;
     font-size: 3rem;
@@ -159,7 +159,7 @@ body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background: linear-gradient(180deg, #BD630F 20.19%, rgba(202, 27, 27, 0.85) 75.10%);
+        background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
         background-repeat: no-repeat;
         height: 80%;
         width: 100%;
@@ -263,7 +263,7 @@ body {
         text-transform: capitalize;
     }
 
-    #btn-riwayat {
+    #btn-tambah {
         text-align: center;
         text-decoration: none;
         width: 15.75rem;
