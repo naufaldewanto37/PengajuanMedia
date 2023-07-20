@@ -1,0 +1,338 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 150vh;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+#navbar-content {
+    display: block;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+#logo-nama {
+    margin-left: 8.12rem;
+    float: left;
+}
+
+#nama-app {
+    float: right;
+}
+
+#navbar-content a {
+    margin-left: 3.5rem;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+#navbar-content a:focus,
+#navbar-content a:hover,
+#navbar-content a:active {
+    color: yellow;
+    text-decoration: underline;
+}
+
+#kominfo-img {
+    width: 5rem;
+    height: 5rem;
+}
+
+#profile {
+    margin-right: 5rem;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+
+.content {
+    margin-top: 3rem;
+    margin-left: 3.13rem;
+    position: relative;
+    top: 8rem;
+}
+
+#penjelasan-judul {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.71875rem;
+}
+
+#penjelasan-isi {
+    width: 110.6875rem;
+    text-align: justify;
+    color: #000;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+#persyaratan-judul {
+    color: #FAFF00;
+    font-family: Roboto;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.71875rem;
+}
+
+#persyaratan-isi {
+    text-align: justify;
+    width: 110.75rem;
+    color: #FAFF00;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+
+
+@media only screen and (max-width: 1308px) and (min-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #BD630F 20.19%, rgba(202, 27, 27, 0.85) 75.10%);
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        min-height: 120vh;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    #navbar-content {
+        display: block;
+        margin: 1rem 1rem 1rem 1rem;
+    }
+
+    #logo-nama {
+        margin-left: 8.12rem;
+        float: left;
+    }
+
+    #nama-app {
+        float: right;
+    }
+
+    #navbar-content a {
+        margin-left: 3.5rem;
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        padding: 14px 16px;
+        text-decoration: none;
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+    }
+
+    #navbar-content a:focus,
+    #navbar-content a:hover,
+    #navbar-content a:active {
+        color: yellow;
+        text-decoration: underline;
+    }
+
+    #kominfo-img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    #profile {
+        margin-right: 5rem;
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .content {
+        margin-top: 3rem;
+        position: relative;
+        top: 8rem;
+    }
+
+    #penjelasan-judul {
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.71875rem;
+    }
+
+    #penjelasan-isi {
+        width: 65.6875rem;
+        text-align: justify;
+        color: #000;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+    }
+
+    #persyaratan-judul {
+        color: #FAFF00;
+        font-family: Roboto;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.71875rem;
+    }
+
+    #persyaratan-isi {
+        text-align: justify;
+        width: 65.75rem;
+        color: #FAFF00;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #BD630F 20.19%, rgba(202, 27, 27, 0.85) 75.10%);
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        min-height: 270vh;
+    }
+
+    #kominfo-img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    #profile {
+        margin-right: 1rem;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    #navbar-content {
+        margin: 1.25rem auto;
+    }
+
+    #logo-nama {
+        margin-left: 1.12rem;
+        float: left;
+    }
+
+    #nama-app {
+        float: right;
+    }
+
+    #navbar-content a {
+        font-size: 1rem;
+        margin-left: 2rem;
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 4px 6px;
+        text-decoration: none;
+    }
+
+    #navbar-content a:focus,
+    #navbar-content a:hover,
+    #navbar-content a:active {
+        color: yellow;
+        text-decoration: underline;
+    }
+
+    .content {
+        position: relative;
+        top: 5rem;
+    }
+
+    #penjelasan-judul {
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.71875rem;
+    }
+
+    #penjelasan-isi {
+        width: 15.6875rem;
+        text-align: justify;
+        color: #000;
+        font-family: Roboto;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+    }
+
+    #persyaratan-judul {
+        color: #FAFF00;
+        font-family: Roboto;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.71875rem;
+    }
+
+    #persyaratan-isi {
+        color: #FAFF00;
+        width: 15.6875rem;
+        font-family: Roboto;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.71875rem;
+    }
+}

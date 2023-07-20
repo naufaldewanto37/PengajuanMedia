@@ -1,10 +1,35 @@
 <?php
 error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 session_start();
-$message = $_SESSION['message'];
 include "config/connection.php";
+
+if (!isset($_SESSION['id_user'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$message = $_SESSION['message'];
 $id_user = $_SESSION['id_user'];
 $profileImageUrl = "profile_member/" . $id_user . ".png";
+
+$sql = "SELECT * FROM user WHERE id_user = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $id_user);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$sql2 = "SELECT * FROM member WHERE id_user = ?";
+$stmt2 = $conn->prepare($sql2);
+$stmt2->bind_param("s", $id_user);
+$stmt2->execute();
+$result2 = $stmt2->get_result();
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    $member = $result2->fetch_assoc();
+}
+
+$_SESSION['company_name'] = $member['company_name'];
 ?>
 
 <!DOCTYPE html>
@@ -42,17 +67,17 @@ $profileImageUrl = "profile_member/" . $id_user . ".png";
             <input type="file" id="myfile" name="myfile" accept="image/png">
             <div class="form-col">
                 <label for="nik">Nama Perusahaan:</label><br>
-                <input class="input-profile" type="text" id="company_name" name="company_name"><br>
+                <input required class="input-profile" type="text" id="company_name" name="company_name" value="<?php echo isset($user) ? $member['company_name'] : ''; ?>"><br>
                 <label for="fullname">Alamat Perusahaan:</label><br>
-                <input class="input-profile" type="text" id="company_address" name="company_address"><br>
+                <input required class="input-profile" type="text" id="company_address" name="company_address" value="<?php echo isset($user) ? $member['company_address'] : ''; ?>"><br>
                 <label for="email">Email:</label><br>
-                <input class="input-profile" type="email" id="email" name="email"><br>
+                <input required class="input-profile" type="email" id="email" name="email" value="<?php echo isset($user) ? $member['email'] : ''; ?>"><br>
                 <label for="username">Username:</label><br>
-                <input class="input-profile" type="text" id="username" name="username"><br>
+                <input required class="input-profile" type="text" id="username" name="username" value="<?php echo isset($user) ? $user['username'] : ''; ?>"><br>
                 <label for="username">Password:</label><br>
-                <input class="input-profile" type="password" id="password" name="password"><br>
+                <input required class="input-profile" type="password" id="password" name="password" value="<?php echo isset($user) ? $user['password'] : ''; ?>"><br>
                 <label for="notelp">No Telp:</label><br>
-                <input class="input-profile" type="tel" id="notelp" name="notelp"><br>
+                <input required class="input-profile" type="tel" id="notelp" name="notelp" value="<?php echo isset($user) ? $member['phone'] : ''; ?>"><br>
             </div>
             <input type="submit" value="Submit" style="margin-top: 5rem; 
                                                         width: 15.8125rem; 

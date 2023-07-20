@@ -1,27 +1,31 @@
 <?php
-include "config/connection.php";
+include "../config/connection.php";
 session_start();
+
+if (!isset($_SESSION['level'])) {
+    header('Location: ../index.php');
+    exit();
+}
+
+$level = $_SESSION['level'];
+
+if (!isset($_SESSION['id_user']) || $level != 'admin') {
+    header('Location: ../index.php');
+    exit();
+}
 
 $error_message = '';
 $succsess_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
-        isset($_POST['company_address']) && trim($_POST['company_address']) !== '' &&
-        isset($_POST['company_name']) && trim($_POST['company_name']) !== '' &&
         isset($_POST['username']) && trim($_POST['username']) !== '' &&
         isset($_POST['password']) && trim($_POST['password']) !== '' &&
-        isset($_POST['confirm_password']) && trim($_POST['confirm_password']) !== '' &&
-        isset($_POST['phone']) && trim($_POST['phone']) !== '' &&
-        isset($_POST['email']) && trim($_POST['email']) !== ''
+        isset($_POST['confirm_password']) && trim($_POST['confirm_password']) !== ''
     ) {
         $id_user = uniqid();
-        $company_name = $_POST['company_name'];
-        $company_address = $_POST['company_address'];
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
 
         if ($password !== $confirm_password) {
             $error_message = 'Password and confirm password do not match.';
@@ -38,16 +42,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $conn->begin_transaction();
 
             // Insert into users table
-            $query = "INSERT INTO user (id_user, username, password, email) VALUES (?, ?, ?, ?)";
+            $query = "INSERT INTO user (id_user, username, password) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($query);
-            $stmt->bind_param("ssss", $id_user, $username, $password, $email);
+            $stmt->bind_param("sss", $id_user, $username, $password);
             $stmt->execute();
             $stmt->close();
 
-            // Insert into profiles table
-            $query = "INSERT INTO member (id_user, company_address, company_name, phone, email) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("sssss", $id_user, $company_address, $company_name, $phone, $email);
+            $query2 = "INSERT INTO member (id_user) VALUES (?)";
+            $stmt = $conn->prepare($query2);
+            $stmt->bind_param("s", $id_user);
             $stmt->execute();
             $stmt->close();
 
@@ -70,13 +73,13 @@ $conn->close();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style-daftar.css">
+    <link rel="stylesheet" href="../style/style-daftar.css">
     <title>Layanan Pengajuan Media Online</title>
 </head>
 
 <body>
     <div class="navbar">
-        <a href="index.php" style="text-decoration: none; color:white">
+        <a href="../index.php" style="text-decoration: none; color:white">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                 <g clip-path="url(#clip0_229_133)">
                     <path d="M4.9245 16.4096C4.50315 16.8315 4.26648 17.4033 4.26648 17.9996C4.26648 18.5958 4.50315 19.1677 4.9245 19.5896L13.4085 28.0781C13.8306 28.5002 14.4031 28.7373 15 28.7373C15.5969 28.7373 16.1694 28.5002 16.5915 28.0781C17.0136 27.656 17.2507 27.0835 17.2507 26.4866C17.2507 25.8897 17.0136 25.3172 16.5915 24.8951L11.9475 20.2496H29.25C29.8467 20.2496 30.419 20.0125 30.841 19.5906C31.2629 19.1686 31.5 18.5963 31.5 17.9996C31.5 17.4028 31.2629 16.8306 30.841 16.4086C30.419 15.9866 29.8467 15.7496 29.25 15.7496L11.9475 15.7496L16.5915 11.1056C16.8005 10.8966 16.9663 10.6485 17.0794 10.3754C17.1925 10.1023 17.2507 9.80965 17.2507 9.51408C17.2507 9.21852 17.1925 8.92584 17.0794 8.65277C16.9663 8.3797 16.8005 8.13158 16.5915 7.92258C16.3825 7.71358 16.1344 7.5478 15.8613 7.43469C15.5882 7.32158 15.2956 7.26336 15 7.26336C14.7044 7.26336 14.4118 7.32158 14.1387 7.43469C13.8656 7.5478 13.6175 7.71358 13.4085 7.92258L4.9245 16.4096Z" fill="white" />
@@ -90,38 +93,18 @@ $conn->close();
         </a>
     </div>
     <div id="bodypage">
-        <img src="https://upload.wikimedia.org/wikipedia/id/6/6a/LOGO_KOTA_BANDAR_LAMPUNG_BARU.png" style="
-        width: 14.875rem;
-        height: 17.75rem;
-        flex-shrink: 0;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 3.313rem;">
-
-        <h1 id="judul">Layanan pengajuan Media Online
-            Kota Bandar Lampung </h1>
+        <h1 id="judul">Penambahan Media Baru </h1>
         <div id="form">
-            <!-- Persegi Panjang di bawah form login -->
             <div class="rectangle-daftar">
-                <!-- Form login -->
                 <div>
                     <form method="post" action="">
-                        <h2 id="text-login">SELAMAT DATANG!</h2>
-                        <label for="username" class="label-user">Nama Perusahaan / Media:</label>
-                        <input type="text" placeholder="Nama Perusahaan.." class="login-box" name="company_name"><br>
-                        <label for="username" class="label-user">Alamat Perusahaan:</label>
-                        <input type="text" placeholder="Alamat Perusahaan..." class="login-box" name="company_address"><br>
+                        <h2 id="text-login">Penambahan Media</h2>
                         <label for="username" class="label-user">Username:</label>
                         <input type="text" placeholder="Username..." class="login-box" name="username"><br>
                         <label for="password" class="label-user">Password:</label>
                         <input type="password" placeholder="Password..." class="login-box" name="password"><br>
                         <label for="username" class="label-user">Konfirmasi Password:</label>
                         <input type="password" placeholder="Konfirmasi Password..." class="login-box" id="confirm_password" name="confirm_password"><br>
-                        <label for="username" class="label-user">Nomor Telephone:</label>
-                        <input type="text" placeholder="Nomor Telephone..." class="login-box" name="phone"><br>
-                        <label for="username" class="label-user">Email:</label>
-                        <input type="text" placeholder="Email..." class="login-box" name="email"><br>
                         <input type="submit" value="Register" id="btn-login">
                         <?php
                         if ($error_message != '') {

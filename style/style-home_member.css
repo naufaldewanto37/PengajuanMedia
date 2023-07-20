@@ -9,8 +9,17 @@ body {
     min-height: 120vh;
 }
 
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
 #navbar-content {
-    margin: 2.25rem 1rem 1rem 1rem;
+    display: block;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 #logo-nama {
@@ -57,15 +66,15 @@ body {
 }
 
 #content {
+    position: relative;
+    top: 8rem;
     margin: 3.56rem auto;
-    /* display: block; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-/* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
@@ -176,6 +185,17 @@ body {
         border-radius: 50%;
         width: 3rem;
         height: 3rem;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        /* Set the navbar to fixed position */
+        top: 0;
+        /* Position the navbar at the top of the page */
+        width: 100%;
+        /* Full width */
     }
 
     #navbar-content {

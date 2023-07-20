@@ -34,6 +34,8 @@ label {
 
 #judul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 61.25rem;
     height: 9.25rem;
     flex-shrink: 0;
@@ -48,13 +50,14 @@ label {
 
 .rectangle-daftar {
     background-color: white;
-    height: 60.875rem;
+    height: 30.875rem;
     width: 50rem;
     margin: 1.25rem auto;
     border-radius: 0.938rem;
 }
 
 #text-login {
+    width: 25rem;
     color: #000;
     font-family: Roboto;
     font-size: 1.875rem;

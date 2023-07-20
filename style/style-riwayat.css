@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.navbar {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+#pilihan {
+    display: flex;
+    flex-direction: row;
+    margin: 6rem 5rem;
+}
+
+.text-yellow {
+    width: 11.31225rem;
+    color: #FFA336;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+.text-black {
+    width: 6.206rem;
+    color: #000;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    text-decoration: none;
+}
+
+.rectangle {
+    width: 92%;
+    flex-shrink: 0;
+    margin: 6rem 5rem;
+    background: #D9D9D9;
+}
+
+.class-blue {
+    color: blue;
+    text-decoration: none;
+}
+
+.class-black {
+    color: black;
+    text-decoration: none;
+}
+
+.class-red {
+    color: red;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .navbar {
+        margin-top: 1rem;
+        margin-left: 5rem;
+    }
+
+    #pilihan {
+        display: flex;
+        flex-direction: row;
+        margin: 6rem 5rem;
+    }
+
+    .text-yellow {
+        width: 11.31225rem;
+        color: #FFA336;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+    }
+
+    .text-black {
+        width: 6.206rem;
+        color: #000;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+        text-decoration: none;
+    }
+
+    .rectangle {
+        width: 15rem;
+        flex-shrink: 0;
+        margin: 6rem 5rem;
+        background: #D9D9D9;
+    }
+
+    .table-a{
+        font-size: 0.8rem;
+    }
+
+    .class-blue {
+        color: blue;
+        text-decoration: none;
+    }
+
+    .class-black {
+        color: black;
+        text-decoration: none;
+    }
+
+    .class-red {
+        color: red;
+        text-decoration: none;
+    }
+}

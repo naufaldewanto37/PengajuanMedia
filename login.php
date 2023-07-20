@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM user WHERE username = ?";
+        $sql = "SELECT * FROM user JOIN member ON user.id_user = member.id_user WHERE username = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['level'] = $user['level'];
                 $_SESSION['id_user'] = $user['id_user'];
+                $_SESSION['company_name'] = $user['company_name'];
                 header('Location: index.php');
             } else {
                 $error_message = 'Password Salah, Silahkan Ulangi.';

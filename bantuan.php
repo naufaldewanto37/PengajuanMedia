@@ -1,3 +1,15 @@
+<?php
+include 'config/connection.php';
+session_start();
+
+if (!isset($_SESSION['id_user'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
