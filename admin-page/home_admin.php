@@ -64,15 +64,15 @@ if (!file_exists($profileImageUrl)) {
     <div id="content">
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="https://bandarlampungkota.go.id/diskominfo/images/berita/thumbs/thumb_303_APPI.jpg">
+                <img src="src/1.jpg">
             </div>
 
             <div class="mySlides fade">
-                <img src="https://bandarlampungkota.go.id/diskominfo/images/berita/thumbs/thumb_778_KendaraanDinas.jpg">
+                <img src="src/2.jpg">
             </div>
 
             <div class="mySlides fade">
-                <img src="https://bandarlampungkota.go.id/diskominfo/images/berita/thumbs/thumb_131_PenutupanApeksi.jpg">
+                <img src="src/3.jpg">
             </div>
         </div>
         <br>
