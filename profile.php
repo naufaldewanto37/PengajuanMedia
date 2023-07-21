@@ -11,6 +11,9 @@ if (!isset($_SESSION['id_user'])) {
 $message = $_SESSION['message'];
 $id_user = $_SESSION['id_user'];
 $profileImageUrl = "profile_member/" . $id_user . ".png";
+if (!file_exists($profileImageUrl)) {
+    $profileImageUrl = "profile_member/no-picture.png";
+}
 
 $sql = "SELECT * FROM user WHERE id_user = ?";
 $stmt = $conn->prepare($sql);

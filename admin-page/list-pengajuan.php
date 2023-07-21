@@ -57,7 +57,7 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
             <form method="get" id="sortForm">
                 <label for="sort_by">Sort by:</label>
                 <select name="sort_by" id="sort_by">
-                    <option value="" <?php echo $all_selected; ?>>Semua</option>
+                    <option value="">Semua</option>
                     <?php
                     $sql = "SELECT * FROM member JOIN user on member.id_user = user.id_user WHERE user.level IS NULL OR user.level = '' ORDER BY member.company_name ASC";
                     $selected_sort = isset($_GET['sort_by']) ? $_GET['sort_by'] : '';

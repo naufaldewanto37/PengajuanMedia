@@ -18,6 +18,9 @@ $user = $result->fetch_assoc();
 $_SESSION['level'] = $user['level'];
 $level = $_SESSION['level'];
 $profileImageUrl = "profile_member/" . $id_user . ".png";
+if (!file_exists($profileImageUrl)) {
+    $profileImageUrl = "profile_member/no-picture.png";
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +41,7 @@ $profileImageUrl = "profile_member/" . $id_user . ".png";
 
 <body>
 
-<div class="navbar fixed-top">
+    <div class="navbar fixed-top">
         <div id="logo-nama">
             <img src="src/kominfo.png" id="kominfo-img">
             <p id="nama-app">SI</p>
@@ -61,15 +64,15 @@ $profileImageUrl = "profile_member/" . $id_user . ".png";
     <div id="content">
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="src/test.jpg">
+                <img src="https://bandarlampungkota.go.id/diskominfo/images/berita/thumbs/thumb_303_APPI.jpg">
             </div>
 
             <div class="mySlides fade">
-                <img src="src/test2.jpg">
+                <img src="https://bandarlampungkota.go.id/diskominfo/images/berita/thumbs/thumb_778_KendaraanDinas.jpg">
             </div>
 
             <div class="mySlides fade">
-                <img src="src/test3.jpg">
+                <img src="https://bandarlampungkota.go.id/diskominfo/images/berita/thumbs/thumb_131_PenutupanApeksi.jpg">
             </div>
         </div>
         <br>
