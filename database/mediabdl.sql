@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2023 at 09:47 AM
+-- Generation Time: Jul 24, 2023 at 09:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,25 +24,77 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `hasilliputan`
+--
+
+CREATE TABLE `hasilliputan` (
+  `id_hasil` varchar(255) NOT NULL,
+  `id_pengajuan` varchar(255) DEFAULT NULL,
+  `judul` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  `tglUpload` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `hasilliputan`
+--
+
+INSERT INTO `hasilliputan` (`id_hasil`, `id_pengajuan`, `judul`, `link`, `keterangan`, `tglUpload`) VALUES
+('64b8cc3732b35', '64b4f58296213', 'a', 'a', 'a', '2023-07-20 12:55:03'),
+('64b8f20eb37ab', '64b7a5717da8d', 'dawdd', 'dwad', 'wdadwa', '2023-07-20 15:36:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 
 CREATE TABLE `member` (
-  `nik` int(100) NOT NULL,
-  `full_name` text DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
+  `id_user` varchar(255) NOT NULL,
+  `phone` varchar(10) DEFAULT NULL,
   `email` text DEFAULT NULL,
-  `self_address` text DEFAULT NULL,
-  `company_address` text DEFAULT NULL,
-  `company_name` text DEFAULT NULL
+  `company_name` text DEFAULT NULL,
+  `company_address` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`nik`, `full_name`, `phone`, `email`, `self_address`, `company_address`, `company_name`) VALUES
-(123, 'naufaldewanto', 123, 'adwa@gmail.com', NULL, NULL, NULL);
+INSERT INTO `member` (`id_user`, `phone`, `email`, `company_name`, `company_address`) VALUES
+('64affabdebc00', '', '', '', ''),
+('64afff0b26381', '8785664', 'awdaa@gmail.com', 'Newslamp', 'jalan newslam'),
+('64afff0b26398', '0895121315', 'newslampung@gmail.com', 'News Lampun', 'Jalan Jalan'),
+('64b8b0cb335c5', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengajuan`
+--
+
+CREATE TABLE `pengajuan` (
+  `id_pengajuan` varchar(255) NOT NULL,
+  `id_user` varchar(255) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `tglterima` date DEFAULT NULL,
+  `tglaju` date DEFAULT NULL,
+  `keterangan` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pengajuan`
+--
+
+INSERT INTO `pengajuan` (`id_pengajuan`, `id_user`, `status`, `tglterima`, `tglaju`, `keterangan`) VALUES
+('64b4f58296213', '64afff0b26398', 'DiSetuju', '1999-04-16', '1999-04-15', NULL),
+('64b4f58296292', '64afff0b26398', 'Menunggu', '1999-04-15', '1999-04-14', 'Kurang Bagus'),
+('64b4f58296312', '64afff0b26381', 'DiSetuju', '1999-03-16', '1999-03-15', NULL),
+('64b4f58296332', '64afff0b26381', 'DiTolak', '1999-05-16', '1999-05-15', 'Kurang Beruntung'),
+('64b4f58296391', '64afff0b26398', 'DiSetuju', '1999-05-16', '1999-05-15', NULL),
+('64b668e68622d', '64afff0b26398', 'DiTolak', '2023-07-19', '2023-07-18', 'Kurang Lengkap'),
+('64b7a5717da8d', '64afff0b26398', 'DiSetuju', NULL, '2023-07-19', NULL);
 
 -- --------------------------------------------------------
 
@@ -51,46 +103,74 @@ INSERT INTO `member` (`nik`, `full_name`, `phone`, `email`, `self_address`, `com
 --
 
 CREATE TABLE `user` (
-  `nik` int(100) NOT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `level` text DEFAULT NULL
+  `id_user` varchar(255) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `level` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`nik`, `username`, `password`, `email`, `level`) VALUES
-(123, 'a', 'b', 'adwa@gmail.com', NULL),
-(2141412, 'admin', 'admin123', 'dadaw@gmail.com', 'admin');
+INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`) VALUES
+('64affabdebc00', 'admin', 'admin123', '', 'admin'),
+('64afff0b26381', 'b', 'c', 'awdaa@gmail.com', NULL),
+('64afff0b26398', 'a', 'b', 'newslampung@gmail.com', NULL),
+('64b8b0cb335c5', 'c', 'd', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `hasilliputan`
+--
+ALTER TABLE `hasilliputan`
+  ADD PRIMARY KEY (`id_hasil`),
+  ADD KEY `id_pengajuan` (`id_pengajuan`);
+
+--
 -- Indexes for table `member`
 --
 ALTER TABLE `member`
-  ADD PRIMARY KEY (`nik`);
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Indexes for table `pengajuan`
+--
+ALTER TABLE `pengajuan`
+  ADD PRIMARY KEY (`id_pengajuan`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`nik`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `hasilliputan`
+--
+ALTER TABLE `hasilliputan`
+  ADD CONSTRAINT `hasilliputan_ibfk_1` FOREIGN KEY (`id_pengajuan`) REFERENCES `pengajuan` (`id_pengajuan`);
+
+--
 -- Constraints for table `member`
 --
 ALTER TABLE `member`
-  ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `user` (`nik`);
+  ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+
+--
+-- Constraints for table `pengajuan`
+--
+ALTER TABLE `pengajuan`
+  ADD CONSTRAINT `pengajuan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
