@@ -174,17 +174,18 @@ if (!isset($_SESSION['id_user'])) {
                         </div>
                         <div class="modal-body">
                             <form method="POST" action="update-modal.php">
+
                                 <div class="mb-3">
                                     <label for="judul" class="col-form-label">Judul Liputan:</label>
-                                    <input type="text" class="form-control" name="judul">
+                                    <input type="text" class="form-control" name="judul-riwayat">
                                 </div>
                                 <div class="mb-3">
                                     <label for="link" class="col-form-label">Link Liputan:</label>
-                                    <input type="text" class="form-control" name="link">
+                                    <input type="text" class="form-control" name="link-riwayat">
                                 </div>
                                 <div class="mb-3">
                                     <label for="Link" class="col-form-label">Keterangan:</label>
-                                    <textarea class="form-control" name="keterangan"></textarea>
+                                    <textarea class="form-control" name="keterangan-riwayat"></textarea>
                                     <input type="hidden" id="id_hasil" name="id_hasil">
                                 </div>
                                 <div class="modal-footer">
@@ -201,11 +202,32 @@ if (!isset($_SESSION['id_user'])) {
 
     <script>
         $('#modal-riwayat').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget) // Button that triggered the modal
-            var id = button.data('id') // Extract info from data-* attributes
-            // Anda dapat menggunakannya untuk mendapatkan data lebih lanjut tentang liputan, atau mengaturnya sebagai input tersembunyi dalam form
-            $('#id_hasil').val(id);
-        })
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id'); // Extract info from data-* attributes
+
+            // Use AJAX to get data from server
+            $.ajax({
+                url: 'get_liputan.php', // URL to your PHP script to get data
+                method: 'POST',
+                data: {
+                    id_hasil: id
+                },
+                success: function(data) {
+                    // If the request was successful, data will contain the response from your PHP script
+                    // Assuming the response is in JSON format, you can parse it and use it to set the form values
+                    var liputan = JSON.parse(data);
+
+                    $('input[name="judul-riwayat"]').val(liputan.judul);
+                    $('input[name="link-riwayat"]').val(liputan.link);
+                    $('textarea[name="keterangan-riwayat"]').val(liputan.keterangan);
+                    $('#id_hasil').val(id);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // If an error occurred, you can print it to the console for debugging
+                    console.error(textStatus, errorThrown);
+                }
+            });
+        });
     </script>
 </body>
 

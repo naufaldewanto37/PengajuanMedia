@@ -96,7 +96,7 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                             $result = $stmt->get_result();
                             while ($user = $result->fetch_assoc()) {
                                 echo "<tr>
-                                    <td><p class='table-a'>$user[id_user]</p></td>
+                                    <td data-bs-toggle='modal' data-bs-target='#modal-file' data-id='$user[id_pengajuan]'><p class='table-a'>$user[id_user]</p></td>
                                     <td><p class='table-a'>$user[company_name]</p></td>
                                     <td><p class='table-a'>$user[tglaju]</p></td>
                                     <td id='td-status'><p class='table-a'>$user[status]</p>";
@@ -146,8 +146,9 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                             $stmt->execute();
                             $result = $stmt->get_result();
                             while ($user = $result->fetch_assoc()) {
-                                echo "<tr>
-                                    <td><p class='table-a'>$user[id_user]</p></td>
+                                $id_pengajuan = $user['id_pengajuan'];
+                                echo "<tr'>
+                                    <td data-bs-toggle='modal' data-bs-target='#modal-file' data-id='$id_pengajuan'><p class='table-a'>$user[id_user]</p></td>
                                     <td><p class='table-a'>$user[company_name]</p></td>
                                     <td><p class='table-a'>$user[tglaju]</p></td>
                                     <td id='td-status'><p class='table-a'>$user[status]</p>";
@@ -196,6 +197,22 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                 </tbody>
             </table>
         </div>
+
+        <div class="modal-file">
+            <div class="modal fade" id="modal-file" tabindex="-1" aria-labelledby="modal-fileLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-fileLabel">Dokumen Pengajuan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="uploaded-files">
+                            <!-- Uploaded files will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -203,6 +220,26 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
         $(document).ready(function() {
             $('#sort_by').change(function() {
                 $('#sortForm').submit();
+            });
+        });
+
+        $(document).ready(function() {
+            $('#modal-file').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget);
+                var id_pengajuan = button.data('id');
+                $.ajax({
+                    type: 'POST',
+                    url: 'get_file.php',
+                    data: {
+                        id_pengajuan: id_pengajuan
+                    },
+                    success: function(data) {
+                        $('#uploaded-files').html(data);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
             });
         });
     </script>
