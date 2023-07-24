@@ -8,9 +8,9 @@ if (!isset($_SESSION['id_user'])) {
 }
 $id_pengajuan = $_SESSION['id_pengajuan'];
 $id_hasil = $_POST['id_hasil'];
-$judul = $_POST['judul'];
-$link = $_POST['link'];
-$keterangan = $_POST['keterangan'];
+$judul = $_POST['judul-riwayat'];
+$link = $_POST['link-riwayat'];
+$keterangan = $_POST['keterangan-riwayat'];
 $sql = "SELECT * FROM hasilliputan where id_hasil = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $id_hasil);
