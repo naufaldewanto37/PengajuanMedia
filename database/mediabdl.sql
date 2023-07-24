@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2023 at 09:07 AM
+-- Generation Time: Jul 24, 2023 at 12:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -36,14 +36,6 @@ CREATE TABLE `hasilliputan` (
   `tglUpload` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `hasilliputan`
---
-
-INSERT INTO `hasilliputan` (`id_hasil`, `id_pengajuan`, `judul`, `link`, `keterangan`, `tglUpload`) VALUES
-('64b8cc3732b35', '64b4f58296213', 'a', 'a', 'a', '2023-07-20 12:55:03'),
-('64b8f20eb37ab', '64b7a5717da8d', 'dawdd', 'dwad', 'wdadwa', '2023-07-20 15:36:30');
-
 -- --------------------------------------------------------
 
 --
@@ -66,7 +58,7 @@ INSERT INTO `member` (`id_user`, `phone`, `email`, `company_name`, `company_addr
 ('64affabdebc00', '', '', '', ''),
 ('64afff0b26381', '8785664', 'awdaa@gmail.com', 'Newslamp', 'jalan newslam'),
 ('64afff0b26398', '0895121315', 'newslampung@gmail.com', 'News Lampun', 'Jalan Jalan'),
-('64b8b0cb335c5', NULL, NULL, NULL, NULL);
+('64b8b0cb335c5', '98329131', 'dwadaw@gmail.com', 'dwadawda', 'dwada');
 
 -- --------------------------------------------------------
 
@@ -92,9 +84,8 @@ INSERT INTO `pengajuan` (`id_pengajuan`, `id_user`, `status`, `tglterima`, `tgla
 ('64b4f58296292', '64afff0b26398', 'Menunggu', '1999-04-15', '1999-04-14', 'Kurang Bagus'),
 ('64b4f58296312', '64afff0b26381', 'DiSetuju', '1999-03-16', '1999-03-15', NULL),
 ('64b4f58296332', '64afff0b26381', 'DiTolak', '1999-05-16', '1999-05-15', 'Kurang Beruntung'),
-('64b4f58296391', '64afff0b26398', 'DiSetuju', '1999-05-16', '1999-05-15', NULL),
 ('64b668e68622d', '64afff0b26398', 'DiTolak', '2023-07-19', '2023-07-18', 'Kurang Lengkap'),
-('64b7a5717da8d', '64afff0b26398', 'DiSetuju', NULL, '2023-07-19', NULL);
+('64bdf7e4d6432', '64b8b0cb335c5', 'Menunggu', NULL, '2023-07-24', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,7 +109,7 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`) VALUES
 ('64affabdebc00', 'admin', 'admin123', '', 'admin'),
 ('64afff0b26381', 'b', 'c', 'awdaa@gmail.com', NULL),
 ('64afff0b26398', 'a', 'b', 'newslampung@gmail.com', NULL),
-('64b8b0cb335c5', 'c', 'd', NULL, NULL);
+('64b8b0cb335c5', 'c', 'd', 'dwadaw@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
