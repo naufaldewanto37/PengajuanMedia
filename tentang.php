@@ -8,6 +8,9 @@ if (!isset($_SESSION['id_user'])) {
 
 $id_user = $_SESSION['id_user'];
 $profileImageUrl = "profile_member/" . $id_user . ".png";
+if (!file_exists($profileImageUrl)) {
+    $profileImageUrl = "profile_member/no-picture.png";
+}
 ?>
 
 <!DOCTYPE html>

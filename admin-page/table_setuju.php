@@ -51,6 +51,27 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
             <a href="table_setuju.php" class="text-yellow" id="setuju">Disetujui</a>
         </div>
 
+        <div class="sort">
+            <form method="get" id="sortForm">
+                <label for="sort_by">Sort by:</label>
+                <select name="sort_by" id="sort_by">
+                    <option value="">Semua</option>
+                    <?php
+                    $sql = "SELECT * FROM member JOIN user on member.id_user = user.id_user WHERE user.level IS NULL OR user.level = '' ORDER BY member.company_name ASC";
+                    $selected_sort = isset($_GET['sort_by']) ? $_GET['sort_by'] : '';
+                    if ($stmt = $conn->prepare($sql)) {
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        while ($row = $result->fetch_assoc()) {
+                            $selected = ($row['company_name'] == $selected_sort) ? 'selected' : '';
+                            echo "<option value='" . $row['company_name'] . "' $selected>" . $row['company_name'] . "</option>";
+                        }
+                    }
+                    ?>
+                </select>
+            </form>
+        </div>
+
         <div class="rectangle">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
@@ -63,31 +84,100 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM pengajuan JOIN member on pengajuan.id_user = member.id_user WHERE pengajuan.status = 'DiSetuju' ORDER BY pengajuan.tglaju DESC;";
-                    // $sql2 = "SELECT * FROM media WHERE "
-                    if ($stmt = $conn->prepare($sql)) {
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        $no = 1;
-                        while ($user = $result->fetch_assoc()) {
-                            echo "<tr>
-                                <td><p class='table-a'>$user[id_user]</p></td>
-                                <td><p class='table-a'>$user[company_name]</p></td>
-                                <td><p class='table-a'>$user[tglaju]</p></td>
-                                <td id='row-status'><div class= 'oval'>
-                                    <p class='table-a' id='text-status'>$user[status]</p>
-                                    </div>
-                                    </tr>";
+                    $sort_by = isset($_GET['sort_by']) ? $_GET['sort_by'] : '';
+                    if ($sort_by != '') {
+                        $sql = "SELECT * FROM pengajuan JOIN member on pengajuan.id_user = member.id_user WHERE pengajuan.status = 'DiSetuju' AND member.company_name = ? ORDER BY pengajuan.tglaju DESC";
+                        if ($stmt = $conn->prepare($sql)) {
+                            $stmt->bind_param('s', $sort_by);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            while ($user = $result->fetch_assoc()) {
+                                $id_pengajuan = $user['id_pengajuan'];
+                                echo "<tr>
+                                        <td data-bs-toggle='modal' data-bs-target='#modal-file' data-id='$user[id_pengajuan]'><p class='table-a'>$user[id_user]</p></td>
+                                        <td><p class='table-a'>$user[company_name]</p></td>
+                                        <td><p class='table-a'>$user[tglaju]</p></td>
+                                        <td id='row-status'>
+                                            <div class= 'oval'>
+                                                <p class='table-a' id='text-status'>$user[status]</p>
+                                            </div>
+                                        </tr>";
+                            }
+                        } else {
+                            echo "Error: " . $conn->error;
                         }
-                    } else {
-                        echo "Error: " . $conn->error;
+                    } else{
+                        $sql = "SELECT * FROM pengajuan JOIN member on pengajuan.id_user = member.id_user WHERE pengajuan.status = 'DiSetuju' ORDER BY pengajuan.tglaju DESC";
+                        if ($stmt = $conn->prepare($sql)) {
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            while ($user = $result->fetch_assoc()) {
+                                echo "<tr>
+                                        <td data-bs-toggle='modal' data-bs-target='#modal-file' data-id='$user[id_pengajuan]'><p class='table-a'>$user[id_user]</p></td>
+                                        <td><p class='table-a'>$user[company_name]</p></td>
+                                        <td><p class='table-a'>$user[tglaju]</p></td>
+                                        <td id='row-status'>
+                                            <div class= 'oval'>
+                                                <p class='table-a' id='text-status'>$user[status]</p>
+                                            </div>
+                                        </tr>";
+                            }
+                        } else {
+                            echo "Error: " . $conn->error;
+                        }
                     }
+                
 
                     ?>
                 </tbody>
             </table>
         </div>
+
+        <div class="modal-file">
+            <div class="modal fade" id="modal-file" tabindex="-1" aria-labelledby="modal-fileLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-fileLabel">Dokumen Pengajuan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="uploaded-files">
+                            <!-- Uploaded files will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sort_by').change(function() {
+                $('#sortForm').submit();
+            });
+        });
+
+        $(document).ready(function() {
+            $('#modal-file').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget);
+                var id_pengajuan = button.data('id');
+                $.ajax({
+                    type: 'POST',
+                    url: 'get_file.php',
+                    data: {
+                        id_pengajuan: id_pengajuan
+                    },
+                    success: function(data) {
+                        $('#uploaded-files').html(data);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

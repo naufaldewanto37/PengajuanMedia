@@ -9,7 +9,6 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
     header('Location: ../index.php');
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -156,7 +155,7 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                                     echo "<form method='post' action='update_status.php'>
                                             <input type='hidden'name='id_user' value='$user[id_user]'>
                                             <input type='hidden'name='id_pengajuan' value='$user[id_pengajuan]'>
-                                            <button type='button' name='action' value='approve' class='btn btn-success' data-toggle='modal' data-target='#ModalSetuju'>SETUJU</button>
+                                            <button type='button' class='btn btn-success' data-toggle='modal' data-target='#ModalSetuju'>SETUJU</button>
                                             <!-- Modal -->
                                             <div class='modal fade' id='ModalSetuju' tabindex='-1' role='dialog' aria-labelledby='ModalSetuju' aria-hidden='true'>
                                                 <div class='modal-dialog modal-dialog-centered' role='document'>
