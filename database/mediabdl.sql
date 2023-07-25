@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2023 at 12:14 PM
+-- Generation Time: Jul 25, 2023 at 01:29 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -85,7 +85,7 @@ INSERT INTO `pengajuan` (`id_pengajuan`, `id_user`, `status`, `tglterima`, `tgla
 ('64b4f58296312', '64afff0b26381', 'DiSetuju', '1999-03-16', '1999-03-15', NULL),
 ('64b4f58296332', '64afff0b26381', 'DiTolak', '1999-05-16', '1999-05-15', 'Kurang Beruntung'),
 ('64b668e68622d', '64afff0b26398', 'DiTolak', '2023-07-19', '2023-07-18', 'Kurang Lengkap'),
-('64bdf7e4d6432', '64b8b0cb335c5', 'Menunggu', NULL, '2023-07-24', NULL);
+('64bdf7e4d6432', '64b8b0cb335c5', 'Menunggu', '2023-07-24', '2023-07-24', '');
 
 -- --------------------------------------------------------
 
