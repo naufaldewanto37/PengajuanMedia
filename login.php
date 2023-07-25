@@ -69,6 +69,7 @@ $conn->close();
                 <div>
                     <form method="post" action="">
                         <h2 id="text-login">SELAMAT DATANG!</h2>
+                        <p id="bantuan">SEBELUM Masuk kE DALAM wEBSITE Silahkan Baca Terlebih dahulu Alur Pengajuan <a href="bantuan.php" style="color: #3F6CDF;">Disini</a></p>
                         <label for="username" class="label-user">Username:</label>
                         <input type="text" placeholder="Username" class="login-box" name="username"><br>
                         <label for="password" class="label-user">Password:</label>

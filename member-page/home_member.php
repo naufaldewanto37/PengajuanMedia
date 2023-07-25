@@ -61,7 +61,6 @@ if (!file_exists($profileImageUrl)) {
         </div>
 
     </div>
-    <div class="batas"></div>
     <!-- Konten halaman -->
     <div id="content">
         <!-- Slideshow container -->
@@ -91,6 +90,16 @@ if (!file_exists($profileImageUrl)) {
 
         <a href="member-page/tambah_pengajuan.php" id="btn-pengajuan">Kerjasama Media</a>
         <a href="member-page/riwayat-pengajuan.php" id="btn-riwayat">Riwayat Pengajuan</a>
+    </div>
+
+    <div class="footer dropleft">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 65 65" fill="none" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <path d="M29.7917 48.7501H35.2083V43.3334H29.7917V48.7501ZM32.5 5.41675C28.9434 5.41675 25.4215 6.11728 22.1356 7.47834C18.8497 8.83941 15.8641 10.8344 13.3492 13.3493C8.27007 18.4284 5.41666 25.3171 5.41666 32.5001C5.41666 39.683 8.27007 46.5718 13.3492 51.6509C15.8641 54.1658 18.8497 56.1608 22.1356 57.5218C25.4215 58.8829 28.9434 59.5834 32.5 59.5834C39.6829 59.5834 46.5717 56.73 51.6508 51.6509C56.7299 46.5718 59.5833 39.683 59.5833 32.5001C59.5833 28.9434 58.8828 25.4216 57.5217 22.1357C56.1607 18.8498 54.1657 15.8642 51.6508 13.3493C49.1359 10.8344 46.1502 8.83941 42.8643 7.47834C39.5784 6.11728 36.0566 5.41675 32.5 5.41675ZM32.5 54.1668C20.5562 54.1668 10.8333 44.4438 10.8333 32.5001C10.8333 20.5563 20.5562 10.8334 32.5 10.8334C44.4437 10.8334 54.1667 20.5563 54.1667 32.5001C54.1667 44.4438 44.4437 54.1668 32.5 54.1668ZM32.5 16.2501C29.6268 16.2501 26.8713 17.3914 24.8397 19.4231C22.808 21.4547 21.6667 24.2102 21.6667 27.0834H27.0833C27.0833 25.6468 27.654 24.2691 28.6698 23.2533C29.6857 22.2374 31.0634 21.6667 32.5 21.6667C33.9366 21.6667 35.3143 22.2374 36.3302 23.2533C37.346 24.2691 37.9167 25.6468 37.9167 27.0834C37.9167 32.5001 29.7917 31.823 29.7917 40.6251H35.2083C35.2083 34.5313 43.3333 33.8542 43.3333 27.0834C43.3333 24.2102 42.192 21.4547 40.1603 19.4231C38.1287 17.3914 35.3732 16.2501 32.5 16.2501Z" fill="white" />
+        </svg>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <p class="dropdown-item" href="#" id="p-footer">perlu Bantuan ?</p>
+            <a class="dropdown-item" href="bantuan.php" id="a-footer">klik disini</a>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>

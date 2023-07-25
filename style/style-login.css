@@ -99,7 +99,19 @@
         text-align: center;
     }
 
-    @media screen and (max-width: 768px) {        
+    #bantuan {
+        width: 50.125rem;
+        color: #000;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+        /* 114.583% */
+        text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 768px) {
         #judul {
             font-size: 0.9rem;
             display: flex;

@@ -158,6 +158,29 @@ body {
     text-transform: capitalize;
 }
 
+.footer {
+    position: relative;
+    top: 8rem;
+    float: right;
+}
+
+.dropdown-item {
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    text-transform: capitalize;
+}
+
+#a-footer{
+    color: #3F6CDF;
+}
+
+#p-footer{
+    color: #000;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     body {
@@ -170,9 +193,7 @@ body {
         padding: 0;
         background: linear-gradient(180deg, #BD630F 20.19%, rgba(202, 27, 27, 0.85) 75.10%);
         background-repeat: no-repeat;
-        height: 80%;
         width: 100%;
-        min-height: 120vh;
     }
 
     #kominfo-img {
@@ -230,7 +251,7 @@ body {
     }
 
     #content {
-        margin: 2.56rem 10vh auto;
+        margin-top: -39rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -297,5 +318,28 @@ body {
         font-style: normal;
         font-weight: 400;
         text-transform: capitalize;
+    }
+
+    .footer {
+        position: relative;
+        top: 8rem;
+        margin-left: 20rem;
+    }
+    
+    .dropdown-item {
+        font-family: Roboto;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.71875rem;
+        text-transform: capitalize;
+    }
+    
+    #a-footer{
+        color: #3F6CDF;
+    }
+    
+    #p-footer{
+        color: #000;
     }
 }

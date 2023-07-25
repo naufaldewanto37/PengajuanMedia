@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 120vh;
+}
+
+.navbar {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+#alur-pengajuan {
+    column-count: 3;
+    margin-top: 5rem;
+    margin-left: 10rem;
+}
+
+#p-header {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    text-transform: capitalize;
+}
+
+.rectangle {    
+    width: 23.75rem;
+    height: 14.3125rem;
+    border-radius: 0.9375rem;
+    background: #FFF;
+    margin-bottom: 3rem;
+}
+
+.circle {
+    width: 2.9375rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background-color: #CE3939;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+.text-rectangle {
+    margin-top: 1rem;
+    margin-right: 5rem;
+    width: 22.75rem;
+    height: 3rem;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#alur-penambahan{
+    margin-top: 5rem;
+    margin-left: 10rem;
+    column-count: 3;
+}
