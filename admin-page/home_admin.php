@@ -44,7 +44,10 @@ if (!file_exists($profileImageUrl)) {
     <div class="navbar fixed-top">
         <div id="logo-nama">
             <img src="src/kominfo.png" id="kominfo-img">
-            <p id="nama-app">SI</p>
+            <div id="nama-app">
+                <p style="margin-bottom: 0rem;">SIMANIS BANDAR LAMPUNG</p>
+                <p id="nama-app2">Sistem Media Komunikasi dan Informasi</p>
+            </div>
         </div>
         <div id="navbar-content">
             <a href="./index.php">Home</a>

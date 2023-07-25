@@ -32,7 +32,10 @@ if (!file_exists($profileImageUrl)) {
     <div class="navbar fixed-top">
         <div id="logo-nama">
             <img src="src/kominfo.png" id="kominfo-img">
-            <p id="nama-app">SI</p>
+            <div id="nama-app">
+                <p style="margin-bottom: 0rem;">SIMANIS BANDAR LAMPUNG</p>
+                <p id="nama-app2">Sistem Media Komunikasi dan Informasi</p>
+            </div>
         </div>
         <div id="navbar-content">
             <a href="index.php">Home</a>
@@ -50,8 +53,7 @@ if (!file_exists($profileImageUrl)) {
     </div>
 
     <div class="content">
-        <p id="penjelasan-judul">Penjelasan Website</p>
-        <p id="penjelasan-isi">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus libero mi, quis viverra arcu finibus vel. Proin euismod, nulla non pretium accumsan, quam eros elementum leo, at maximus ex tellus vitae ipsum. Mauris accumsan, enim in tincidunt placerat, turpis enim venenatis purus, et ultricies orci nisi a odio. Nunc in dapibus est. Integer placerat magna enim, rutrum convallis felis volutpat in. Aenean sollicitudin arcu ornare pulvinar ultrices. Proin et elementum erat, sit amet gravida turpis. Morbi consectetur iaculis lorem condimentum efficitur. Sed euismod varius eleifend. Etiam consectetur ligula eget eros egestas sagittis. Praesent viverra, turpis sed mollis volutpat, felis nibh feugiat sapien, vel mollis nulla ex vel metus. Curabitur dapibus sem eget velit finibus, id facilisis libero venenatis.</p>
+        <p id="penjelasan-isi">SIMANIS KOTA BANDAR LAMPUNG merupakan sistem media komunikasi dan informasi kota bandar lampung yang bertujuan sebagai platform pengajuan kerjasama media elektronik dengan kominfo kota bandar lampung. Website ini memiliki beberapa fitur yang dapat digunakan seperti fitur pengajuan kerjasama, riwayat pengajuan kerjasama dan upload hasil liputan.</p>
         <p id="persyaratan-judul">Persyaratan Pengajuan Kerja Sama</p>
         <p id="persyaratan-isi">
             1. Surat Permohonan atau Penawaran Kerjasama Media yang Ditujukan Kepada Wali Kota Bandar Lampung Melalui Diskominfo Kota Bandar Lampung<br>

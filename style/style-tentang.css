@@ -29,6 +29,28 @@ body {
 
 #nama-app {
     float: right;
+    margin-top: 1rem;
+    width: 30.1875rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+}
+
+#nama-app2 {
+    width: 15rem;
+    margin-right: 15rem;
+    float: right;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 0.8625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
 }
 
 #navbar-content a {
@@ -84,7 +106,7 @@ body {
 #penjelasan-isi {
     width: 110.6875rem;
     text-align: justify;
-    color: #000;
+    color: #F2EB02;
     font-family: Roboto;
     font-size: 1.5rem;
     font-style: normal;
@@ -272,6 +294,28 @@ body {
 
     #nama-app {
         float: right;
+        margin-top: 0.3rem;
+        width: 15.1875rem;
+        height: 1rem;
+        flex-shrink: 0;
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 0.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1rem;
+    }
+    
+    #nama-app2 {
+        width: 8rem;
+        margin-right: 7rem;
+        float: right;
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 0.4625rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1rem;
     }
 
     #navbar-content a {

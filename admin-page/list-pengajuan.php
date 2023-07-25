@@ -52,27 +52,6 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
             <a href="table_setuju.php" class="text-black" id="setuju">Disetujui</a>
         </div>
 
-        <div class="sort">
-            <form method="get" id="sortForm">
-                <label for="sort_by">Sort by:</label>
-                <select name="sort_by" id="sort_by">
-                    <option value="">Semua</option>
-                    <?php
-                    $sql = "SELECT * FROM member JOIN user on member.id_user = user.id_user WHERE user.level IS NULL OR user.level = '' ORDER BY member.company_name ASC";
-                    $selected_sort = isset($_GET['sort_by']) ? $_GET['sort_by'] : '';
-                    if ($stmt = $conn->prepare($sql)) {
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        while ($row = $result->fetch_assoc()) {
-                            $selected = ($row['company_name'] == $selected_sort) ? 'selected' : '';
-                            echo "<option value='" . $row['company_name'] . "' $selected>" . $row['company_name'] . "</option>";
-                        }
-                    }
-                    ?>
-                </select>
-            </form>
-        </div>
-
         <div class="rectangle">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
@@ -80,7 +59,28 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                         <th scope="col">ID USER</th>
                         <th scope="col">NAMA MEDIA</th>
                         <th scope="col">TGL PENGAJUAN</th>
-                        <th scope="col">STATUS</th>
+                        <th scope="col">STATUS
+                            <div class="sort">
+                                <form method="get" id="sortForm">
+                                    <label for="sort_by">Sort by:</label>
+                                    <select name="sort_by" id="sort_by">
+                                        <option value="">Semua</option>
+                                        <?php
+                                        $sql = "SELECT * FROM member JOIN user on member.id_user = user.id_user WHERE user.level IS NULL OR user.level = '' ORDER BY member.company_name ASC";
+                                        $selected_sort = isset($_GET['sort_by']) ? $_GET['sort_by'] : '';
+                                        if ($stmt = $conn->prepare($sql)) {
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+                                            while ($row = $result->fetch_assoc()) {
+                                                $selected = ($row['company_name'] == $selected_sort) ? 'selected' : '';
+                                                echo "<option value='" . $row['company_name'] . "' $selected>" . $row['company_name'] . "</option>";
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </form>
+                            </div>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
