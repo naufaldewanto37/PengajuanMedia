@@ -33,6 +33,8 @@ session_start();
 
     <div class="content">
         <p id='p-header'>Alur Pengajuan Kerjasama Media</p>
+        <img src="src/bantuan1.png" id="img-alur-pengajuan">
+        <!-- 
         <div id="alur-pengajuan">
             <div class="rectangle">
                 <div class="circle">
@@ -94,10 +96,11 @@ session_start();
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <p id='p-header'>Alur Penambahan Media Baru/ Pembuatan Akun</p>
-        <div id="alur-penambahan">
+        <img src="src/bantuan2.png" id="img-alur-penambahan">
+        <!-- <div id="alur-penambahan">
             <div class="rectangle">
                 <div class="circle">
                     1
@@ -128,7 +131,7 @@ session_start();
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <p id='p-header'>Kontak Kami</p>
     </div>

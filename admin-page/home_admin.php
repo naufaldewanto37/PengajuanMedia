@@ -41,7 +41,7 @@ if (!file_exists($profileImageUrl)) {
 
 <body>
 
-    <div class="navbar fixed-top">
+<div class="navbar fixed-top">
         <div id="logo-nama">
             <img src="src/kominfo.png" id="kominfo-img">
             <div id="nama-app">
@@ -63,27 +63,35 @@ if (!file_exists($profileImageUrl)) {
         </div>
 
     </div>
-    <div class="batas"></div>
+    
     <div id="content">
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="src/1.jpg">
-            </div>
+    <div class="image-container">
+            <div class="slideshow-container">
 
-            <div class="mySlides fade">
-                <img src="src/2.jpg">
-            </div>
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <img src="src/1.jpg">
+                </div>
 
-            <div class="mySlides fade">
-                <img src="src/3.jpg">
-            </div>
-        </div>
-        <br>
+                <div class="mySlides fade">
+                    <img src="src/2.jpg">
+                </div>
 
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+                <div class="mySlides fade">
+                    <img src="src/3.jpg">
+                </div>
+
+                <!-- The dots/circles -->
+                <div id="dot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+            <br>
+
+            <img src="https://upload.wikimedia.org/wikipedia/id/6/6a/LOGO_KOTA_BANDAR_LAMPUNG_BARU.png" id="img-bdl">
+            <img src="src/kominfo.png" id="img-kominfo">
         </div>
 
         <a href="admin-page/list-pengajuan.php" id="btn-pengajuan">List Pengajuan</a>

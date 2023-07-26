@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+    background: linear-gradient(180deg, #0093DD 0%, #00458E 100%);
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
@@ -11,7 +11,7 @@ body {
 
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    /* background-color: #333; */
     position: relative;
     top: 0;
     width: 100%;
@@ -19,18 +19,17 @@ body {
 
 #navbar-content {
     display: block;
-    margin: 1rem 1rem 1rem 1rem;
+    /* margin: 1rem 1rem 1rem 1rem; */
 }
 
 #logo-nama {
-    margin-left: 8.12rem;
     float: left;
 }
 
 #nama-app {
     float: right;
     margin-top: 1rem;
-    width: 30.1875rem;
+    width: 25.1875rem;
     height: 1.75rem;
     flex-shrink: 0;
     color: #FFF;
@@ -43,7 +42,7 @@ body {
 
 #nama-app2 {
     width: 15rem;
-    margin-right: 15rem;
+    margin-right: 10rem;
     float: right;
     color: #FFF;
     font-family: Roboto;
@@ -81,7 +80,7 @@ body {
 }
 
 #profile {
-    margin-right: 5rem;
+    /* margin-right: 5rem; */
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
@@ -110,8 +109,32 @@ body {
 }
 
 .mySlides img {
-    width: 60rem;
-    height: 30rem;
+    width: 30.483rem;
+    height: 30.27681rem;
+    border-radius: 2%;
+    margin-right: 6rem;
+}
+
+#img-bdl {
+    width: 17.875rem;
+    height: 17.75rem;
+    flex-shrink: 0;
+    margin-top: 5rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+#img-kominfo {
+    width: 18.75rem;
+    height: 16.25rem;
+    flex-shrink: 0;
+    margin-top: 5rem;
+    margin-left: 6rem;
+}
+
+#dot {
+    margin-top: 1rem;
+    margin-left: 13rem;
 }
 
 /* The dots/bullets/indicators */
@@ -156,7 +179,7 @@ body {
     height: 4.6875rem;
     flex-shrink: 0;
     border-radius: 0.9375rem;
-    background: #BD630F;
+    background: #1C8FD0;
     color: #FFF;
     font-family: Roboto;
     font-size: 3rem;
@@ -172,13 +195,18 @@ body {
     height: 4.6875rem;
     flex-shrink: 0;
     border-radius: 0.9375rem;
-    background: #BD630F;
+    background: #1C8FD0;
     color: #FFF;
     font-family: Roboto;
     font-size: 3rem;
     font-style: normal;
     font-weight: 400;
     text-transform: capitalize;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
 }
 
 /* Responsive */
@@ -191,7 +219,7 @@ body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background: linear-gradient(180deg, #BD630F 35.19%, rgba(202, 27, 27, 0.85) 65.10%);
+        background: linear-gradient(180deg, #0093DD 0%, #00458E 100%);
         background-repeat: no-repeat;
         height: 80%;
         width: 100%;
@@ -204,10 +232,21 @@ body {
     }
 
     #profile {
-        margin-right: 5rem;
+        /* margin-right: 5rem; */
         border-radius: 50%;
         width: 3rem;
         height: 3rem;
+    }
+
+    .navbar {
+        overflow: hidden;
+        /* background-color: #333; */
+        position: fixed;
+        /* Set the navbar to fixed position */
+        top: 0;
+        /* Position the navbar at the top of the page */
+        width: 100%;
+        /* Full width */
     }
 
     #navbar-content {
@@ -215,14 +254,13 @@ body {
     }
 
     #logo-nama {
-        margin-left: 1.12rem;
         float: left;
     }
 
     #nama-app {
         float: right;
         margin-top: 0.3rem;
-        width: 15.1875rem;
+        width: 9.1875rem;
         height: 1rem;
         flex-shrink: 0;
         color: #FFF;
@@ -235,7 +273,7 @@ body {
 
     #nama-app2 {
         width: 8rem;
-        margin-right: 7rem;
+        margin-right: 1rem;
         float: right;
         color: #FFF;
         font-family: Roboto;
@@ -284,10 +322,35 @@ body {
     }
 
     .mySlides img {
-        width: 20rem;
-        height: 10rem;
+        width: 8.483rem;
+        height: 8.27681rem;
+        border-radius: 2%;
+        margin-right: 1rem;
     }
 
+    #img-bdl {
+        width: 5.875rem;
+        height: 5.75rem;
+        flex-shrink: 0;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #img-kominfo {
+        width: 5.75rem;
+        height: 5.25rem;
+        flex-shrink: 0;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+
+    #dot {
+        margin-top: 0.8rem;
+        margin-left: 3rem;
+    }
+
+    /* The dots/bullets/indicators */
     .dot {
         cursor: pointer;
         height: 10px;
@@ -308,7 +371,7 @@ body {
         height: 1.6875rem;
         flex-shrink: 0;
         border-radius: 0.9375rem;
-        background: #85460b;
+        background: #1C8FD0;
         color: #FFF;
         font-family: Roboto;
         font-size: 1.2rem;
@@ -324,7 +387,7 @@ body {
         height: 1.6875rem;
         flex-shrink: 0;
         border-radius: 0.9375rem;
-        background: #85460b;
+        background: #1C8FD0;
         color: #FFF;
         font-family: Roboto;
         font-size: 1.2rem;

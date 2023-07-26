@@ -67,28 +67,33 @@ if (!file_exists($profileImageUrl)) {
     <!-- Konten halaman -->
     <div id="content">
         <!-- Slideshow container -->
-        <div class="slideshow-container">
+        <div class="image-container">
+            <div class="slideshow-container">
 
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <img src="src/1.jpg">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <img src="src/1.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="src/2.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="src/3.jpg">
+                </div>
+
+                <!-- The dots/circles -->
+                <div id="dot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </div>
+            <br>
 
-            <div class="mySlides fade">
-                <img src="src/2.jpg">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="src/3.jpg">
-            </div>
-        </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            <img src="https://upload.wikimedia.org/wikipedia/id/6/6a/LOGO_KOTA_BANDAR_LAMPUNG_BARU.png" id="img-bdl">
+            <img src="src/kominfo.png" id="img-kominfo">
         </div>
 
         <a href="member-page/tambah_pengajuan.php" id="btn-pengajuan">Kerjasama Media</a>
