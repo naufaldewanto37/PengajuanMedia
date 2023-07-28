@@ -75,8 +75,7 @@ if (!isset($_SESSION['id_user'])) {
     </div>
 
     <div id="container" class="mt-5">
-        <p class="p-container" style="color:lightgreen">Selamat! Pengajuan Kerjasama Telah Diterima.</p>
-        <p class="p-container mb-5">Silahkan inputkan hasil Liputan pada Form di bawah ini : </p>
+        <p class="p-container mb-5">Hasil Liputan dari <?php echo $_SESSION['company_name']?> </p>
         <div class="rectangle">
             <p class="text-rect" style="color: #000;">ID Pengajuan : &nbsp &nbsp &nbsp &nbsp<?php echo $id_pengajuan; ?></p>
             <p class="text-rect" style="color: #000;">Nama Media : &nbsp &nbsp &nbsp &nbsp<?php echo $_SESSION['company_name']; ?></p>
