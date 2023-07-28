@@ -98,7 +98,7 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                                     <td data-bs-toggle='modal' data-bs-target='#modal-file' data-id='$user[id_pengajuan]'><p class='table-a'>$user[id_user]</p></td>
                                     <td><p class='table-a'>$user[company_name]</p></td>
                                     <td><p class='table-a'>$user[tglaju]</p></td>
-                                    <td id='td-status'><p class='table-a'>$user[status]</p>";
+                                    <td id='td-status'><p class='table-a'><a href='hasil_liputan.php?id_pengajuan=".$user['id_pengajuan']."'>$user[status]</a></p>";
                                 if ($user['status'] === 'Menunggu') {
                                     echo "<form method='post' action='update_status.php'>
                                             <input type='hidden'name='id_user' value='$user[id_user]'>

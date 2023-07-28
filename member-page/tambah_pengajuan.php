@@ -100,7 +100,7 @@ $id_user = $_SESSION['id_user'];
                 </div>
                 <div class="form-group ml-3">
                     <label for="AH">8. Surat Kuasa (Jika Tidak Ditandatangani Langsung Oleh Pemimpin Perusahaan) <span style="color:red;">**</span></label>
-                    <input type="file" class="form-control-file" name="AH" required accept="application/pdf">
+                    <input type="file" class="form-control-file" name="AH" accept="application/pdf">
                 </div>
                 <div class="form-group ml-3 mt-3">
                     <label for="AI">9. Surat Domisili Perusahaan <span style="color:red;">*</span></label>

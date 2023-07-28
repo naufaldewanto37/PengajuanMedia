@@ -99,7 +99,7 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                                         <td><p class='table-a'>$user[tglaju]</p></td>
                                         <td id='row-status'>
                                             <div class= 'oval'>
-                                                <p class='table-a' id='text-status'>$user[status]</p>
+                                                <a style='text-decoration:none' href='hasil_liputan.php?id_pengajuan=".$user['id_pengajuan']."'>$user[status]</a>
                                             </div>
                                         </tr>";
                             }
@@ -118,7 +118,7 @@ if (!isset($_SESSION['id_user']) || $level != 'admin') {
                                         <td><p class='table-a'>$user[tglaju]</p></td>
                                         <td id='row-status'>
                                             <div class= 'oval'>
-                                                <p class='table-a' id='text-status'>$user[status]</p>
+                                                <a style='text-decoration:none' href='hasil_liputan.php?id_pengajuan=".$user['id_pengajuan']."'>$user[status]</a>
                                             </div>
                                         </tr>";
                             }
