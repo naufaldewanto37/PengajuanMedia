@@ -158,19 +158,16 @@ if (!isset($_SESSION['id_user'])) {
 
     <script>
         $('#modal-riwayat').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var id = button.data('id'); // Extract info from data-* attributes
+            var button = $(event.relatedTarget);
+            var id = button.data('id');
 
-            // Use AJAX to get data from server
             $.ajax({
-                url: 'get_liputan.php', // URL to your PHP script to get data
+                url: '../member-page/get_liputan.php',
                 method: 'POST',
                 data: {
                     id_hasil: id
                 },
                 success: function(data) {
-                    // If the request was successful, data will contain the response from your PHP script
-                    // Assuming the response is in JSON format, you can parse it and use it to set the form values
                     var liputan = JSON.parse(data);
 
                     $('input[name="judul-riwayat"]').val(liputan.judul);
@@ -179,7 +176,6 @@ if (!isset($_SESSION['id_user'])) {
                     $('#id_hasil').val(id);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    // If an error occurred, you can print it to the console for debugging
                     console.error(textStatus, errorThrown);
                 }
             });
