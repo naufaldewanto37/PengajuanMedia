@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2023 at 01:29 PM
+-- Generation Time: Jul 29, 2023 at 10:28 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -36,6 +36,13 @@ CREATE TABLE `hasilliputan` (
   `tglUpload` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `hasilliputan`
+--
+
+INSERT INTO `hasilliputan` (`id_hasil`, `id_pengajuan`, `judul`, `link`, `keterangan`, `tglUpload`) VALUES
+('64c36a56815eb', '64b4f58296213', 'test', 'test', 'tesst', '2023-07-28 14:12:22');
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +65,25 @@ INSERT INTO `member` (`id_user`, `phone`, `email`, `company_name`, `company_addr
 ('64affabdebc00', '', '', '', ''),
 ('64afff0b26381', '8785664', 'awdaa@gmail.com', 'Newslamp', 'jalan newslam'),
 ('64afff0b26398', '0895121315', 'newslampung@gmail.com', 'News Lampun', 'Jalan Jalan'),
-('64b8b0cb335c5', '98329131', 'dwadaw@gmail.com', 'dwadawda', 'dwada');
+('64b8b0cb335c5', '98329131', 'dwadaw@gmail.com', 'dwadawda', 'dwada'),
+('64c09585b7084', NULL, NULL, NULL, NULL),
+('64c0959a28949', NULL, NULL, NULL, NULL),
+('64c095bade306', NULL, NULL, NULL, NULL),
+('64c095cd24718', NULL, NULL, NULL, NULL),
+('64c095dfd74df', NULL, NULL, NULL, NULL),
+('64c0961eea4f9', NULL, NULL, NULL, NULL),
+('64c0963235b78', NULL, NULL, NULL, NULL),
+('64c0964686cd3', NULL, NULL, NULL, NULL),
+('64c0965861d0a', NULL, NULL, NULL, NULL),
+('64c0966e3a4ca', NULL, NULL, NULL, NULL),
+('64c0969584a7b', NULL, NULL, NULL, NULL),
+('64c096ba9bde3', NULL, NULL, NULL, NULL),
+('64c096d8164c8', NULL, NULL, NULL, NULL),
+('64c096e90b6d0', NULL, NULL, NULL, NULL),
+('64c096ff33664', NULL, NULL, NULL, NULL),
+('64c0970e3c660', NULL, NULL, NULL, NULL),
+('64c0972277b4e', NULL, NULL, NULL, NULL),
+('64c097391c004', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -109,7 +134,25 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`) VALUES
 ('64affabdebc00', 'admin', 'admin123', '', 'admin'),
 ('64afff0b26381', 'b', 'c', 'awdaa@gmail.com', NULL),
 ('64afff0b26398', 'a', 'b', 'newslampung@gmail.com', NULL),
-('64b8b0cb335c5', 'c', 'd', 'dwadaw@gmail.com', NULL);
+('64b8b0cb335c5', 'c', 'd', 'dwadaw@gmail.com', NULL),
+('64c09585b7084', 'tvri_lampung', 'tvrilampung123', NULL, NULL),
+('64c0959a28949', 'radar_tv', 'radartv123', NULL, NULL),
+('64c095bade306', 'sctv', 'sctv123', NULL, NULL),
+('64c095cd24718', 'tegar_tv', 'tegartv123', NULL, NULL),
+('64c095dfd74df', 'siger_tv', 'sigertv123', NULL, NULL),
+('64c0961eea4f9', 'inews_tv', 'inewstv123', NULL, NULL),
+('64c0963235b78', 'kompas_tv', 'kompastv123', NULL, NULL),
+('64c0964686cd3', 'tv_one', 'tvone123', NULL, NULL),
+('64c0965861d0a', 'antv', 'antv123', NULL, NULL),
+('64c0966e3a4ca', 'indosiar', 'indosiar123', NULL, NULL),
+('64c0969584a7b', 'metro_tv_lampost', 'metrotvlampost123', NULL, NULL),
+('64c096ba9bde3', 'metro_tv_nasional', 'metrotvnasional123', NULL, NULL),
+('64c096d8164c8', 'radio_sonora', 'radiosonora123', NULL, NULL),
+('64c096e90b6d0', 'nusantara_tv', 'nusantara123', NULL, NULL),
+('64c096ff33664', 'saburai_tv', 'saburaitv123', NULL, NULL),
+('64c0970e3c660', 'lds_tv', 'ldstv123', NULL, NULL),
+('64c0972277b4e', 'sai_radio', 'sairadio123', NULL, NULL),
+('64c097391c004', 'delta_tv', 'deltatv123', NULL, NULL);
 
 --
 -- Indexes for dumped tables
