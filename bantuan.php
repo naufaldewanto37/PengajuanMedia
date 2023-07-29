@@ -34,106 +34,10 @@ session_start();
     <div class="content">
         <p id='p-header'>Alur Pengajuan Kerjasama Media</p>
         <img src="src/bantuan1.png" id="img-alur-pengajuan">
-        <!-- 
-        <div id="alur-pengajuan">
-            <div class="rectangle">
-                <div class="circle">
-                    1
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Admin akan memberikan akun kepada pengaju.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    4
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Setelah itu, pengaju dapat melengkapi dokumen yang diperlukan (penting untuk membaca keterangan terlebih dahulu sebelum melengkapi dokumen) dan menekan tombol submit.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    2
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Pengaju login ke dalam website dan melengkapi data diri pada menu profil.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    5
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Admin akan memverifikasi dokumen yang telah di-submit. Pengaju dapat memeriksa email atau melihat status penerimaan/penolakan melalui menu riwayat kerjasama.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    3
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Selanjutnya, pada homescreen masuk ke menu kerjasama media.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    6
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Jika kerjasama diterima, jangan lupa untuk mengupload hasil liputan media pada menu kerjasama media (tampilan menu kerjasama media akan berganti jika dokumen kerjasama pengaju diterima).
-                    </p>
-                </div>
-            </div>
-        </div> -->
-
         <p id='p-header'>Alur Penambahan Media Baru/ Pembuatan Akun</p>
         <img src="src/bantuan2.png" id="img-alur-penambahan">
-        <!-- <div id="alur-penambahan">
-            <div class="rectangle">
-                <div class="circle">
-                    1
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Pengaju menghubungi admin melalui email (yang tertera di bawah) dan memberikan identitas media dengan jelas.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    2
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Admin akan memverifikasi identitas pengaju.
-                    </p>
-                </div>
-            </div>
-            <div class="rectangle">
-                <div class="circle">
-                    3
-                </div>
-                <div class="text-rectangle">
-                    <p>
-                        Jika pengajuan disetujui, admin akan mengirimkan username dan password akun ke email pengaju.
-                    </p>
-                </div>
-            </div>
-        </div> -->
-
         <p id='p-header'>Kontak Kami</p>
+        <a id="telp" href="https://wa.me/08117217375"><img id="wa-img" src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png">08117217375 (Farida Herawati)</a>
     </div>
 
 </body>
