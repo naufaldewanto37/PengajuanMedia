@@ -33,7 +33,6 @@ body {
     flex-shrink: 0;
     background-color: #CE3939;
     border-radius: 100%;
-    /* fill: #CE3939; */
 }
 
 .circle {
@@ -42,7 +41,6 @@ body {
     flex-shrink: 0;
     background-color: #6A7580;
     border-radius: 100%;
-    /* fill: #CE3939; */
 }
 
 .text-progress {
@@ -115,7 +113,6 @@ body {
         flex-shrink: 0;
         background-color: #CE3939;
         border-radius: 100%;
-        /* fill: #CE3939; */
     }
 
     .circle {
@@ -124,7 +121,6 @@ body {
         flex-shrink: 0;
         background-color: #6A7580;
         border-radius: 100%;
-        /* fill: #CE3939; */
     }
 
     .text-progress {

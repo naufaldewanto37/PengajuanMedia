@@ -20,7 +20,6 @@ $stmt->bind_param("sssss", $id_pengajuan, $id_user, $status, $tglterima, $tglaju
 $stmt->execute();
 $stmt->close();
 
-// If both inserts were successful, commit the transaction
 $conn->commit();
 $conn->close();
 
@@ -36,7 +35,6 @@ foreach ($_FILES as $fieldName => $file) {
         continue;
     }
 
-    // Try to upload file
     if (move_uploaded_file($file["tmp_name"], $target_file)) {
         header('Location: tambah_pengajuan2.php');
     }

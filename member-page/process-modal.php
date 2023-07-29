@@ -31,7 +31,6 @@ $stmt->bind_param("ssssss", $id_hasil, $id_pengajuan, $judul, $link, $keterangan
 $stmt->execute();
 $stmt->close();
 
-// If both inserts were successful, commit the transaction
 $conn->commit();
 $conn->close();
 

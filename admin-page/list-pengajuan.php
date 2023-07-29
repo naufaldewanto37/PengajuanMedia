@@ -4,7 +4,6 @@ session_start();
 include "../config/connection.php";
 $id_user = $_SESSION['id_user'];
 $level = $_SESSION['level'];
-// unset($_SESSION['status']);
 if (!isset($_SESSION['id_user']) || $level != 'admin') {
     header('Location: ../index.php');
     exit();

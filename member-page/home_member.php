@@ -10,14 +10,6 @@ if (!isset($_SESSION['id_user'])) {
 }
 
 $id_user = $_SESSION['id_user'];
-// $sql = "SELECT * FROM user WHERE id_user = ?";
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param("s", $id_user);
-// $stmt->execute();
-// $result = $stmt->get_result();
-// $user = $result->fetch_assoc();
-// $_SESSION['level'] = $user['level'];
-// $level = $_SESSION['level'];
 $profileImageUrl = "profile_member/" . $id_user . ".png";
 if (!file_exists($profileImageUrl)) {
     $profileImageUrl = "profile_member/no-picture.png";

@@ -1,5 +1,4 @@
 <?php
-// Connect to database
 include '../config/connection.php';
 $id_hasil = $_POST['id_hasil'];
 
@@ -12,7 +11,6 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $liputan = $result->fetch_assoc();
 
-    // Echo the data as a JSON string
     echo json_encode($liputan);
 } else {
     echo json_encode(array());

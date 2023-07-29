@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $check_stmt->close();
             $conn->begin_transaction();
 
-            // Insert into users table
             $query = "INSERT INTO user (id_user, username, password) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($query);
             $stmt->bind_param("sss", $id_user, $username, $password);
@@ -54,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute();
             $stmt->close();
 
-            // If both inserts were successful, commit the transaction
             $conn->commit();
             $succsess_message = 'User has been created successfully.';
         }

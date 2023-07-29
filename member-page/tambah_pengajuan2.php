@@ -10,7 +10,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 $_SESSION['status'] = $user['status'];
-// $_SESSION['id_pengajuan'] = $user['id_pengajuan'];
 
 $_SESSION['id_pengajuan'] = $id_pengajuan;
 if (!isset($_SESSION['id_user'])) {

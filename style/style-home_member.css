@@ -11,7 +11,6 @@ body {
 
 .navbar {
     overflow: hidden;
-    /* background-color: #333; */
     position: relative;
     top: 0;
     width: 100%;
@@ -19,7 +18,6 @@ body {
 
 #navbar-content {
     display: block;
-    /* margin: 1rem 1rem 1rem 1rem; */
 }
 
 #logo-nama {
@@ -41,8 +39,8 @@ body {
 }
 
 #nama-app2 {
-    width: 15rem;
-    margin-right: 10rem;
+    width: 18rem;
+    margin-right: 7rem;
     float: right;
     color: #FFF;
     font-family: Roboto;
@@ -80,7 +78,6 @@ body {
 }
 
 #profile {
-    /* margin-right: 5rem; */
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
@@ -102,7 +99,6 @@ body {
     margin: auto;
 }
 
-/* Hide the images by default */
 .mySlides {
     display: none;
     flex-shrink: 0;
@@ -137,7 +133,6 @@ body {
     margin-left: 13rem;
 }
 
-/* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
     height: 15px;
@@ -154,7 +149,6 @@ body {
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 3.5s;
@@ -232,7 +226,6 @@ body {
     flex-direction: row;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
     body {
         display: flex;
@@ -253,7 +246,6 @@ body {
     }
 
     #profile {
-        /* margin-right: 5rem; */
         border-radius: 50%;
         width: 3rem;
         height: 3rem;
@@ -261,13 +253,9 @@ body {
 
     .navbar {
         overflow: hidden;
-        /* background-color: #333; */
         position: fixed;
-        /* Set the navbar to fixed position */
         top: 0;
-        /* Position the navbar at the top of the page */
         width: 100%;
-        /* Full width */
     }
 
     #navbar-content {
@@ -330,14 +318,12 @@ body {
         flex-direction: column;
     }
 
-    /* Slideshow container */
     .slideshow-container {
         max-width: 1000px;
         position: relative;
         margin: auto;
     }
 
-    /* Hide the images by default */
     .mySlides {
         display: none;
     }
@@ -371,7 +357,6 @@ body {
         margin-left: 3rem;
     }
 
-    /* The dots/bullets/indicators */
     .dot {
         cursor: pointer;
         height: 10px;

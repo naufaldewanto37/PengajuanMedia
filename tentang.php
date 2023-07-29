@@ -33,8 +33,8 @@ if (!file_exists($profileImageUrl)) {
         <div id="logo-nama">
             <img src="src/kominfo.png" id="kominfo-img">
             <div id="nama-app">
-                <p style="margin-bottom: 0rem;">SIMANIS BANDAR LAMPUNG</p>
-                <p id="nama-app2">Sistem Media Komunikasi dan Informasi</p>
+                <p style="margin-bottom: 0rem;">SIKMANIS BANDAR LAMPUNG</p>
+                <p id="nama-app2">Sistem Kendali Media Komunikasi dan Informasi</p>
             </div>
         </div>
         <div id="navbar-content">
